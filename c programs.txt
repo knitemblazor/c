@@ -1,0 +1,223 @@
+#include <stdio.h>
+int factorial(int n)
+{
+if(n>=1)
+return n*factorial(n-1);
+else
+return 1;
+}//factorial
+void main()
+{ int n;
+scanf("%d",&n);
+printf("%d",factorial(n));
+
+}
+#include <stdio.h>
+void main()
+{int n,i;
+scanf("%d",&n);
+int f[n];
+f[0]=1;
+f[1]=1;//fibonacci
+for (i=2;i<n;i++)
+{
+f[i]=f[i-1]+f[i-2];
+}
+for(i=0;i<n;i++)
+{printf("%d\n",f[i]);
+}
+}
+#include <stdio.h>
+#include<stdlib.h>
+void main()
+{char a[20],b[20];
+scanf("%s",&a);
+scanf("%s",&b);
+if(strcmp(a,b)==0)
+
+printf("hi");
+else
+printf("bye");
+}
+
+#include <stdio.h>
+#include<stdlib.h>
+void main()
+{char *c='a';
+for(int i=0;i<26;i++)
+printf("%c\n",c++);
+
+}//print alphabets
+
+#include<stdio.h>
+struct hi
+{int a,b;
+char name[20];
+}p;
+
+void main()
+{ p.a=10;//using structures
+printf("%d",p.a);
+}
+#include<stdio.h>
+void main()
+{ int *a,b;
+scanf("%d",&b);
+a=&b;
+printf("%p",a);//using pointers
+}
+
+#include<stdio.h>
+//struct hi
+//{int a,b;
+// char name[20];
+//}p;
+
+void main()
+{// char b[3]={'a','b','c'};
+int a[2]={1,2};
+//scanf("%d",&b);
+//a[1]=&b[1];
+//a[2]=&b[2];
+//a[3]=&b[3];
+//printf("%p\n%p\n%p\n",a[1],a[2],a[3]);
+printf("%d",*(a+1));
+//printf("%d",&a);
+}
+
+#include<stdio.h>
+#include<string.h>
+void main()
+{ char a[20],b[20];
+int i,j;
+// gets(a);
+scanf("%s",&a);
+//printf("%c",a[0]);
+j=0;
+for(i=strlen(a)-1;i>=0;i--)
+{b[j]=a[i];
+j++;
+}
+printf("%s",b);
+}
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+char a[20],b[20],c[20];
+int i,j;
+
+scanf("%s",&a); //concatenate strings
+scanf("%s",&b);
+for(i=0;i<strlen(a);i++)
+{c[i]=a[i];
+}
+for(i=strlen(a);i<strlen(a)+strlen(b);i++)
+{c[i]=b[j];
+j++;
+}
+printf("%s",c);
+}
+
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+char a[20],b[20],c[20];
+int i,j[20],n;
+scanf("%d",&n);
+for(i=1;i<=3;i++)
+{j[i]=n%10; // reverse a 3 digit no.
+n=n-j[i];
+n=n/10;
+printf("%d",j[i]);
+}
+}
+
+#include<stdio.h>
+struct record
+{ int a;
+char b[20];
+char c[20];
+}p;
+
+void main()
+{ printf("enter the roll no.\n");
+scanf("%d",&p.a);
+
+printf("enter the name\n");
+scanf("%s",&p.b);
+printf("enter address\n");
+scanf("%s",&p.c);
+printf("roll no.%d\n",p.a);
+printf("name:%s\n",p.b);
+printf("address:%s\n",p.c);
+}
+#include<stdio.h>
+
+int funct(int *a,int *b)
+{ int c;
+c=*a;
+*a=*b;
+*b=c;
+}
+void main()
+{ int j,k;
+scanf("%d%d",&j,&k);
+funct(&j,&k);
+printf("%d%d",j,k);
+}
+
+#include <stdio.h>
+int main()
+{
+int a, b, x, y, t, gcd, lcm;
+printf("Enter two integers\n");
+scanf("%d%d", &x, &y);
+a = x;
+b = y;
+while (b != 0) {
+t = b;
+b = a % b;
+a = t;
+}
+gcd = a;
+
+lcm = (x*y)/gcd;
+printf("Greatest common divisor of %d and %d = %d\n", x, y, gcd);
+printf("Least common multiple of %d and %d = %d\n", x, y, lcm);
+return 0;
+}
+#include<stdio.h>
+void main()
+{ int i,j,k;
+int a[3][3],b[3][3],c[3][3];
+for(i=0;i<3;i++)
+{ for(j=0;j<3;j++)
+{ scanf("%d",&a[i][j]);
+}
+}
+for(i=0;i<3;i++)
+{ for(j=0;j<3;j++) //matrix multiplication
+{c[i][j]=0;
+for(k=0;k<3;k++)
+c[i][j]+=a[i][k]*a[k][j];
+}
+}
+for(i=0;i<3;i++)
+{ for(j=0;j<3;j++)
+{ printf("%d\t",c[i][j]);
+}
+printf("\n");
+}
+}
+
+#include<stdio.h>
+void main()
+{ int i,j;
+FILE *fp; //file handling
+fp=fopen("2.c","r+");
+//fp=fopen("2.c","w+");
+
+fclose(fp);
+}
